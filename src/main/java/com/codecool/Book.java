@@ -1,14 +1,16 @@
 package com.codecool;
 
-public class Book {
+class Book {
     String author;
     String title;
     int numOfPages;
-    Boolean read = false;
-    public Book(String author, String title, int numOfPages, Boolean read) {
+
+    Book(String author, String title, int numOfPages) {
         this.author = author;
         this.title = title;
         this.numOfPages = numOfPages;
-        this.read = read;
+
     }
 }
+
+

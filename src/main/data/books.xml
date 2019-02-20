@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Books>
+    <Book>
+        <type>Fantasy</type>
+        <autor>Salvatore</autor>
+        <title>Homeland</title>
+        <pages>350</pages>
+        <type>Classic</type>
+    </Book>
+
+    <Book>
+        <type>Fantasy</type>
+        <autor>Neil Gaiman</autor>
+        <title>Good Omens</title>
+        <pages>288</pages>
+        <type>Humour</type>
+    </Book>
+
+    <Book>
+        <type>Fantasy</type>
+        <autor>Philip Pullman</autor>
+        <title>Northern Lights</title>
+        <pages>399</pages>
+        <type>Classic</type>
+    </Book>
+
+    <Book>
+        <type>Fantasy</type>
+        <autor>Garth Nix</autor>
+        <title>Sabriel</title>
+        <pages>491</pages>
+        <type>Children's lit.</type>
+    </Book>
+
+    <Book>
+        <type>Fantasy</type>
+        <autor>Robin Hobb</autor>
+        <title>The assasin's aprentice</title>
+        <pages>400</pages>
+        <type>Epic</type>
+    </Book>
+
+    <Book>
+        <type>PopUpBook</type>
+        <autor>Matthew Reinhart</autor>
+        <title>Disney Princess</title>
+        <pages>200</pages>
+        <kind>FAIRYTALE</kind>
+    </Book>
+
+    <Book>
+        <type>PopUpBook</type>
+        <autor>Matthew Reinhart</autor>
+        <title>Star Wars</title>
+        <pages>267</pages>
+        <kind>FAIRYTALE</kind>
+    </Book>
+
+    <Book>
+        <type>PopUpBook</type>
+        <autor>Matthew Reinhart</autor>
+        <title>Star Wars</title>
+        <pages>267</pages>
+        <kind>FAIRYTALE</kind>
+    </Book>
+
+    <Book>
+        <type>PopUpBook</type>
+        <autor>Yevgeinya Yeretskaya</autor>
+        <title>Snowflakes</title>
+        <pages>180</pages>
+        <kind>FAIRYTALE</kind>
+    </Book>
+
+    <Book>
+        <type>PopUpBook</type>
+        <autor>Watson MacCarthy</autor>
+        <title>Popups</title>
+        <pages>207</pages>
+        <kind>CITY</kind>
+    </Book>
+
+    <Book>
+        <type>CookBook</type>
+        <autor>Kathy Hester</autor>
+        <title>Ultimate Vegan Cookbook</title>
+        <pages>224</pages>
+        <foodkind>Vegan</foodkind>
+    </Book>
+
+    <Book>
+        <type>CookBook</type>
+        <autor>Jennifer Smith</autor>
+        <title>Instant pot</title>
+        <pages>268</pages>
+        <foodkind>Pot Pressure</foodkind>
+    </Book>
+
+    <Book>
+        <type>CookBook</type>
+        <autor>Stephanie Middleberg</autor>
+        <title>Orgainc Babyfood</title>
+        <pages>296</pages>
+        <foodkind>Babyfood</foodkind>
+    </Book>
+
+    <Book>
+        <type>CookBook</type>
+        <autor>Zach Golden</autor>
+        <title>What the F## should cook</title>
+        <pages>100</pages>
+        <foodkind>Dinner</foodkind>
+    </Book>
+
+    <Book>
+        <type>CookBook</type>
+        <autor>Elizabeth Cunningham</autor>
+        <title>KETO Diet for Beginners</title>
+        <pages>249</pages>
+        <foodkind>Diet</foodkind>
+    </Book>
+
+</Books>
