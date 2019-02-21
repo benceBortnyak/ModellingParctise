@@ -50,7 +50,7 @@ class Start {
         int n2 = Input.subMenuInput();
 
         if (n2 == 1) {
-            if(storage.checkIfFull(storage.retSelf(),4) == false){
+            if(!storage.checkIfFull(storage.retSelf(),4)){
                 System.out.println("Storage is full");
                 start();
             }
@@ -59,7 +59,7 @@ class Start {
                 book.remove(n - 1);
             }
         } else if (n2 == 2) {
-            if(storage.checkIfFull(storage.retDesk(),4) == false){
+            if(!storage.checkIfFull(storage.retDesk(),4)){
                 System.out.println("Storage is full");
                 start();
             }
@@ -68,7 +68,7 @@ class Start {
                 book.remove(n - 1);
             }
         } else if (n2 == 3) {
-            if(storage.checkIfFull(storage.retSmall(),1) == false){
+            if(!storage.checkIfFull(storage.retSmall(),1)){
                 System.out.println("Storage is full");
                 start();
             }
