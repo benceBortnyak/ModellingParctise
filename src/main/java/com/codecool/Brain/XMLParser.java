@@ -1,5 +1,6 @@
-package com.codecool;
+package com.codecool.Brain;
 
+import com.codecool.Brain.*;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -16,14 +17,14 @@ import java.util.List;
 
 
 
-class XMLParser {
-    List<Book> xmlParser() {
+public class XMLParser {
+    public List<Book> xmlParser() {
         List<Book> books = new ArrayList<>();
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
             try {
-                Document doc = builder.parse("src/main/data/books.xml");
+                Document doc = builder.parse("books.xml");
                 doc.getDocumentElement().normalize();
                 Element root = doc.getDocumentElement();
                 NodeList allBooks = root.getChildNodes();

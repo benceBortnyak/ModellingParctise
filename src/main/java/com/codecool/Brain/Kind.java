@@ -1,4 +1,4 @@
-package com.codecool;
+package com.codecool.Brain;
 
 enum Kind {
     CITY,
