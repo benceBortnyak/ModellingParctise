@@ -11,4 +11,15 @@ public class Fantasy extends Book {
         super(author, title, numOfPages, content);
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return "Fantasy{" +
+            "type='" + type + '\'' +
+            ", author='" + author + '\'' +
+            ", title='" + title + '\'' +
+            ", numOfPages=" + numOfPages +
+            ", content=" + content +
+            '}';
+    }
 }

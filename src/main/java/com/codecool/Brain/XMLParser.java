@@ -18,67 +18,71 @@ import java.util.List;
 
 
 public class XMLParser {
-    public List<Book> xmlParser() {
+    public List<Book> xmlParser() throws SAXException,IOException,ParserConfigurationException{
         List<Book> books = new ArrayList<>();
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        try {
-            DocumentBuilder builder = factory.newDocumentBuilder();
-            try {
-                Document doc = builder.parse("books.xml");
-                doc.getDocumentElement().normalize();
-                Element root = doc.getDocumentElement();
-                NodeList allBooks = root.getChildNodes();
-                List<Integer> constarray = new ArrayList<>();
-                for (int i = 0; i < allBooks.getLength(); i++) {
-                    Node booknode = allBooks.item(i);
-                    if (booknode.getNodeType() == booknode.ELEMENT_NODE) {
-                        NodeList parameters = booknode.getChildNodes();
-                        Element nElement = (Element) parameters;
-                        NodeList nL = nElement.getElementsByTagName("*");
-                        Book book = bookTypeCheck(nL);
+        DocumentBuilder builder = factory.newDocumentBuilder();
 
-                        books.add(book);
-                    }
-                }
+        Document doc = builder.parse("books.xml");
+        doc.getDocumentElement().normalize();
+        Element root = doc.getDocumentElement();
+        NodeList allBooks = root.getChildNodes();
+        List<Integer> constarray = new ArrayList<>();
+        for (int i = 0; i < allBooks.getLength(); i++) {
+            Node booknode = allBooks.item(i);
+            if (booknode.getNodeType() == booknode.ELEMENT_NODE) {
+                NodeList parameters = booknode.getChildNodes();
+                Element nElement = (Element) parameters;
+                NodeList nL = nElement.getElementsByTagName("*");
+                Book book = bookTypeCheck(nL);
 
-            } catch (SAXException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
+                books.add(book);
             }
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
         }
         return books;
-
     }
 
     private Book bookTypeCheck(NodeList nL) throws FileNotFoundException {
         if ((nL.item(0).getTextContent()).equals("CookBook")) {
+            List<String> contents = new ArrayList<>();
             String autor = nL.item(1).getTextContent();
             String title = nL.item(2).getTextContent();
             int pages = Integer.valueOf(nL.item(3).getTextContent());
             String foodKind = (nL.item(4).getTextContent());
-            Cookbook ret = new Cookbook(autor, title, pages, foodKind);
-            return ret;
-
+            NodeList nodes = nL.item(5).getChildNodes();
+            for (int i = 0; i < nodes.getLength() ; i++) {
+                String content = nodes.item(i).getTextContent();
+                contents.add(content);
+            }
+            return new Cookbook(autor, title, pages,contents,foodKind);
         }
         if ((nL.item(0).getTextContent()).equals("PopUpBook")) {
-            //in progress
+            List<String> contents = new ArrayList<>();
             String autor = nL.item(1).getTextContent();
             String title = nL.item(2).getTextContent();
             int pages = Integer.valueOf(nL.item(3).getTextContent());
             Kind anEnum = Kind.valueOf(nL.item(4).getTextContent());
-            PopUpBook ret = new PopUpBook(autor, title, pages, anEnum);
-            return ret;
+            NodeList nodes = nL.item(5).getChildNodes();
+            for (int i = 0; i < nodes.getLength() ; i++) {
+                String content = nodes.item(i).getTextContent();
+                contents.add(content);
+            }
+            return new PopUpBook(autor, title, pages, contents ,anEnum);
+
         }
         if ((nL.item(0).getTextContent()).equals("Fantasy")) {
+            List<String> contents = new ArrayList<>();
             String autor = nL.item(1).getTextContent();
             String title = nL.item(2).getTextContent();
             int pages = Integer.valueOf(nL.item(3).getTextContent());
             String type = (nL.item(4).getTextContent());
-            Fantasy ret = new Fantasy(autor, title, pages, type);
-            return ret;
+            NodeList nodes = nL.item(5).getChildNodes();
+            for (int i = 0; i < nodes.getLength() ; i++) {
+                String content = nodes.item(i).getTextContent();
+                contents.add(content);
+            }
+            return new Fantasy(autor, title, pages, contents,type);
+
         }
         throw new FileNotFoundException("Error with the file reading :(");
     }

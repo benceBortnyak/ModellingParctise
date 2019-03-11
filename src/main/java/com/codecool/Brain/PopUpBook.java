@@ -13,5 +13,17 @@ public class PopUpBook extends Book {
         super(author, title, numOfPages, content);
         this.kind = kind;
     }
+
+
+    @Override
+    public String toString() {
+        return "PopUpBook{" +
+            "kind=" + kind +
+            ", author='" + author + '\'' +
+            ", title='" + title + '\'' +
+            ", numOfPages=" + numOfPages +
+            ", content=" + content +
+            '}';
+    }
 }
 
