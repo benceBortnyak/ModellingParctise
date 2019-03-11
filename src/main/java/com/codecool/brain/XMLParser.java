@@ -1,6 +1,5 @@
-package com.codecool.Brain;
+package com.codecool.brain;
 
-import com.codecool.Brain.*;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -27,7 +26,6 @@ public class XMLParser {
         doc.getDocumentElement().normalize();
         Element root = doc.getDocumentElement();
         NodeList allBooks = root.getChildNodes();
-        List<Integer> constarray = new ArrayList<>();
         for (int i = 0; i < allBooks.getLength(); i++) {
             Node booknode = allBooks.item(i);
             if (booknode.getNodeType() == booknode.ELEMENT_NODE) {

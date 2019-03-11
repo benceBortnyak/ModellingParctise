@@ -1,7 +1,6 @@
-package com.codecool.UI;
+package com.codecool.ui;
 
 
-import com.codecool.Brain.XMLParser;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;

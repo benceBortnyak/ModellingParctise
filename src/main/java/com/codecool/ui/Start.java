@@ -1,4 +1,4 @@
-package com.codecool.UI;
+package com.codecool.ui;
 
 public class Start {
     

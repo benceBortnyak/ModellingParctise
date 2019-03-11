@@ -1,7 +1,4 @@
-package com.codecool.Brain;
-
-import com.codecool.Brain.Book;
-import com.codecool.Brain.Kind;
+package com.codecool.brain;
 
 import java.util.List;
 
