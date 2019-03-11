@@ -1,8 +1,9 @@
 package com.codecool.brain;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Book {
+public class Book implements Serializable{
     String author;
     String title;
     int numOfPages;
@@ -10,6 +11,8 @@ public class Book {
 
     public List<String> getContent() {
         return content;
+    }
+    public Book() {
     }
 
     public Book(String author, String title, int numOfPages, List<String> content) {

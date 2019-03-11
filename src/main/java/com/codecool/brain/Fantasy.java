@@ -1,8 +1,9 @@
 package com.codecool.brain;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Fantasy extends Book {
+public class Fantasy extends Book implements Serializable{
     String type;
 
     public Fantasy(String author, String title, int numOfPages, List<String> content, String type) {

@@ -1,8 +1,9 @@
 package com.codecool.brain;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Cookbook extends Book {
+public class Cookbook extends Book implements Serializable{
     String foodKind;
 
     public Cookbook(String author, String title, int numOfPages, List<String> content, String foodKind) {

@@ -1,7 +1,9 @@
 package com.codecool.ui;
 
 
-class UI {
+public class UI {
 
-
+    public static void sendFeedback(String string){
+        System.out.println(string);
+    }
 }

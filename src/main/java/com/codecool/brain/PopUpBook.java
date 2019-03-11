@@ -1,8 +1,9 @@
 package com.codecool.brain;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class PopUpBook extends Book {
+public class PopUpBook extends Book implements Serializable{
     
     private Kind kind;
 
