@@ -9,7 +9,7 @@ public class Book implements Serializable{
     int numOfPages;
     List<String> content;
 
-    public List<String> getContent() {
+    List<String> getContent() {
         return content;
     }
     public Book() {

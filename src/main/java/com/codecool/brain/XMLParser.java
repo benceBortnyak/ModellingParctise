@@ -9,7 +9,6 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +16,7 @@ import java.util.List;
 
 
 public class XMLParser {
-    public List<Book> xmlParser() throws SAXException,IOException,ParserConfigurationException{
+    public List<Book> xmlParser() throws SAXException,IOException,ParserConfigurationException,BookNotFoundException{
         List<Book> books = new ArrayList<>();
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
@@ -40,7 +39,7 @@ public class XMLParser {
         return books;
     }
 
-    private Book bookTypeCheck(NodeList nL) throws FileNotFoundException {
+    private Book bookTypeCheck(NodeList nL) throws BookNotFoundException{
         if ((nL.item(0).getTextContent()).equals("CookBook")) {
             List<String> contents = new ArrayList<>();
             String autor = nL.item(1).getTextContent();
@@ -82,6 +81,6 @@ public class XMLParser {
             return new Fantasy(autor, title, pages, contents,type);
 
         }
-        throw new FileNotFoundException("Error with the file reading :(");
+        throw new BookNotFoundException();
     }
 }

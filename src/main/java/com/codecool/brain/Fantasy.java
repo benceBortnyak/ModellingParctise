@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 public class Fantasy extends Book implements Serializable{
-    String type;
+    private String type;
 
     public Fantasy(String author, String title, int numOfPages, List<String> content, String type) {
         super(author, title, numOfPages, content);

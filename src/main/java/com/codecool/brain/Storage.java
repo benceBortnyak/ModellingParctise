@@ -1,6 +1,12 @@
 package com.codecool.brain;
 
-public abstract class Storage {
+import java.io.Serializable;
+
+public abstract class Storage implements Serializable {
+
+    Storage() {
+    }
+
     public abstract boolean typeCheck(Book book);
 
 }

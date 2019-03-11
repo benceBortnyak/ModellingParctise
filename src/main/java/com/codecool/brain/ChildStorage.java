@@ -1,8 +1,9 @@
 package com.codecool.brain;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class ChildStorage extends Storage {
+public class ChildStorage extends Storage implements Serializable {
 
     private List<Book> storage;
     private int capacity;
@@ -17,7 +18,7 @@ public class ChildStorage extends Storage {
     public boolean typeCheck(Book book){
         List<String> type = book.getContent();
         for (String contentType : type) {
-            if (contentType.equals("Child")){
+            if (contentType.equals("child")){
                 return true;
             }
         }
