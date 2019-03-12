@@ -1,6 +1,6 @@
 package com.codecool.brain;
 
-enum Kind {
+public enum Kind {
     CITY,
     FAIRYTALE
 }

@@ -21,5 +21,6 @@ public class Cookbook extends Book implements Serializable{
             ", content=" + content +
             '}';
     }
+
 }
 

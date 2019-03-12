@@ -30,5 +30,13 @@ public class OutPut {
         );
 
     }
+    static void printNewBook(){
+        System.out.println("Choose wich kind of you wanna make;\n" +
+            "\t 1.Cookbook"+
+                "\t 2.Pop up book"+
+                "\t 1.Fantasy book"
+            );
+    }
+
 
 }

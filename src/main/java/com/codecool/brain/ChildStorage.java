@@ -12,7 +12,7 @@ public class ChildStorage extends Storage implements Serializable {
     public ChildStorage(List<Book> storage, int capacity) {
         this.storage = storage;
         this.capacity = capacity;
-        this.type ="Child";
+        this.type ="child";
     }
 
     public boolean typeCheck(Book book){
