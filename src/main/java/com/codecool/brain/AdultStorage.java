@@ -7,12 +7,13 @@ public class AdultStorage extends Storage implements Serializable {
 
     private List<Book> storage;
     private int capacity;
-    private String type;
+
 
     public AdultStorage(List<Book> storage, int capacity) {
+        super("adult");
         this.storage = storage;
         this.capacity = capacity;
-        this.type = "adult";
+
     }
 
     public boolean typeCheck(Book book){

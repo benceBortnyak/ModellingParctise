@@ -68,6 +68,9 @@ public class Home{
     public List<Storage> getStorage() {
         return storage;
     }
+    public void addBook(Book book){
+        this.books.add(book);
+    }
 
     @Override
     public String toString() {

@@ -1,80 +1,73 @@
 package com.codecool.ui;
 
-import com.codecool.brain.Kind;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 class Input {
+    private static Scanner scanner = new Scanner(System.in);
     static int intInput(){
-        Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
     }
     static int quitMenuInput(){
-        Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
     }
     static String autorInPut(){
         System.out.println("Enter the autor : ");
-        Scanner scanner = new Scanner(System.in);
             return scanner.next();
     }
     static String titleInPut(){
         System.out.println("Enter the title : ");
-        Scanner scanner = new Scanner(System.in);
         return scanner.next();
     }
     static int pageInput(){
+        int n;
         System.out.println("Enter the number of pages : ");
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextInt();
+        try {
+            n = scanner.nextInt();
+        }catch (InputMismatchException e ){
+            System.out.println("Wrong input try again");
+            n = scanner.nextInt();
+        }
+        return n;
     }
     static String foodKindInPut(){
-        Scanner scanner = new Scanner(System.in);
+        System.out.println("Which kind of recipes are in the book? ");
         return scanner.next();
     }
     static String typeInput(){
         System.out.println("Enter the sub genre: ");
-        Scanner scanner = new Scanner(System.in);
         return scanner.next();
     }
-    static List<String> content(){
-        List<String> ret = new ArrayList<>();
-        System.out.println("For who is this book?\n" +
-            "  Press: \n"
-        );
-        for (int i = 0; i < 3; i++) {
-            System.out.println(
-            "\t1.adult\n"+
-                "\t2.child\n"+
-                "\t3.teen\n");
-            Scanner scanner = new Scanner(System.in);
+    static List<String> content() throws InputMismatchException{
+        List<String> list = new ArrayList<>(Arrays.asList("teen","adult","child"));
+        List<String> retList = new ArrayList<>();
+        System.out.println("For who is this book?\n");
+        while(list.size()>0) {
+            System.out.println("If you added everything what you wanted press 0" +
+                "  Press:");
+            for (int i = 0; i < list.size(); i++) {
+                System.out.println((i + 1) + list.get(i));
+
+            }
             int in = scanner.nextInt();
-            if(in == 1){
-                ret.add("adult");
-            }
-            else if(in == 2 ){
-                ret.add("child");
-            }
-            else if(in == 3){
-                ret.add("teen");
-            }
-            else{
+            if (in > list.size()) {
                 System.out.println("Wrong input");
+
+            } else if (in == 0) {
+                return retList;
+            }
+            else if(in<3 && in>0) {
+                String string = list.remove(in-1);
+                retList.add(string);
             }
         }
-        return ret;
+        return retList;
     }
-    static int kindInput(){
+    static int kindInput() throws InputMismatchException{
         System.out.println("Press:" +
             "1.CITY kind of book"+
-            "2.FAIRYTALE kind of book"
-        );
-        Scanner scanner = new Scanner(System.in);
+            "2.FAIRYTALE kind of book");
         return scanner.nextInt();
     }
-
-
 }
 

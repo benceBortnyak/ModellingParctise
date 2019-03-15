@@ -10,20 +10,10 @@ public class ChildStorage extends Storage implements Serializable {
     private String type;
 
     public ChildStorage(List<Book> storage, int capacity) {
+        super("child");
         this.storage = storage;
         this.capacity = capacity;
-        this.type ="child";
-    }
 
-    public boolean typeCheck(Book book){
-        List<String> type = book.getContent();
-        for (String contentType : type) {
-            if (contentType.equals("child")){
-                return true;
-            }
-        }
-        return false;
     }
-
 
 }

@@ -6,6 +6,8 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.List;
 
 class Start {
@@ -78,8 +80,10 @@ class Start {
 
     private void createNewBook(Home home){
         OutPut.printNewBook();
+
         int in = Input.intInput();
         if (in == 1){
+
             String autor = Input.autorInPut();
             String title = Input.titleInPut();
             int page = Input.pageInput();
@@ -88,13 +92,9 @@ class Start {
 
 
             Cookbook cookbook = new Cookbook(autor,title,page,cont,kind);
-            List<Book> books = home.getBooks();
-            books.add(cookbook);
-            home.setBooks(books);
-
+            home.addBook(cookbook);
         }
         else if(in == 2){
-            //Pop
             String autor = Input.autorInPut();
             String title = Input.titleInPut();
             int page = Input.pageInput();
@@ -131,6 +131,7 @@ class Start {
             books.add(fantasy);
             home.setBooks(books);
         }
+
         else {
             OutPut.sendFeedback("Wrong input");
         }
