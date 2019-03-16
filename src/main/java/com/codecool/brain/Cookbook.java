@@ -1,11 +1,11 @@
 package com.codecool.brain;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
-public class Cookbook extends Book implements Serializable{
+import java.util.List;
+
+
+public class Cookbook extends Book implements Serializable {
     private String foodKind;
 
     public Cookbook(String author, String title, int numOfPages, List<String> content, String foodKind) {
@@ -16,13 +16,13 @@ public class Cookbook extends Book implements Serializable{
     @Override
     public String toString() {
         List<String> cont = content;
-        String contStr = String.join("",cont);
+        String contStr = String.join("", cont);
         return "Cookbook | " +
-            "Food type: " + foodKind +" | " +
-            "Author: " + author +" | " +
+            "Food type: " + foodKind + " | " +
+            "Author: " + author + " | " +
             "Title: " + title + " | " +
             "Number of pages: " + numOfPages + " | " +
-            "\n\tContent:"+ contStr;
+            "\n\tContent:" + contStr;
     }
 
 }

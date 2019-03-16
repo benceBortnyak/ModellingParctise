@@ -3,8 +3,8 @@ package com.codecool.brain;
 import java.io.Serializable;
 import java.util.List;
 
-public class PopUpBook extends Book implements Serializable{
-    
+public class PopUpBook extends Book implements Serializable {
+
     private Kind kind;
 
     public PopUpBook(String author, String title, int numOfPages, List<String> content, Kind kind) {
@@ -16,13 +16,13 @@ public class PopUpBook extends Book implements Serializable{
     @Override
     public String toString() {
         List<String> cont = content;
-        String contStr = String.join("",cont);
+        String contStr = String.join("", cont);
         return "PopUpBook | " +
-            "Type: " + kind +" | " +
-            "Author: " + author +" | " +
+            "Type: " + kind + " | " +
+            "Author: " + author + " | " +
             "Title: " + title + " | " +
             "Number of pages: " + numOfPages + " | " +
-            "\n\tContent:"+ contStr;
+            "\n\tContent:" + contStr;
     }
 }
 

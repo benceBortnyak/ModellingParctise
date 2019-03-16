@@ -3,16 +3,17 @@ package com.codecool.brain;
 import java.io.Serializable;
 import java.util.List;
 
-public class Book implements Serializable{
+public class Book implements Serializable {
     String author;
     String title;
     int numOfPages;
     List<String> content;
 
 
-    List<String> getContent() {
+    public List<String> getContent() {
         return content;
     }
+
     public Book() {
     }
 

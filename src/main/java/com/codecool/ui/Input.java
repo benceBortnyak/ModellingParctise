@@ -2,18 +2,58 @@ package com.codecool.ui;
 
 
 import com.codecool.brain.Book;
+import com.codecool.brain.Home;
+import com.codecool.brain.Storage;
 
 import java.util.*;
 
 class Input {
     private static Scanner scanner = new Scanner(System.in);
 
-    static int intInput() {
-        return scanner.nextInt();
+    static int intInput(int n, int n2) {
+        boolean success = false;
+        int retValue = 0;
+        while (!success) {
+            try {
+
+                Scanner scannerInt = new Scanner(System.in);
+                retValue = scannerInt.nextInt();
+                if (retValue < n || retValue > n2) {
+                    success = false;
+                    throw new InputMismatchException();
+                } else {
+                    success = true;
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.println("Wrong input try again");
+            }
+        }
+        return retValue;
+
     }
 
-    static int quitMenuInput() {
-        return scanner.nextInt();
+    static int quitMenuInput(int n, int n2) {
+        boolean success = false;
+        int retValue = 0;
+        while (!success) {
+            try {
+                //im not sure if its okay like this
+                Scanner scannerInt = new Scanner(System.in);
+                retValue = scannerInt.nextInt();
+                if (retValue < n || retValue > n2) {
+                    success = false;
+                    throw new InputMismatchException();
+                } else {
+                    success = true;
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.println("Wrong input try again");
+            }
+        }
+        return retValue;
+
     }
 
     static String autorInPut() {
@@ -160,7 +200,8 @@ class Input {
         }
         return retValue;
     }
-    static int rmBookFromList(List<Book> books ){
+
+    static int rmBookFromList(List<Book> books) {
         OutPut.removeAddBook();
         boolean success = false;
         int retValue = 0;
@@ -183,7 +224,77 @@ class Input {
         return retValue - 1;
 
     }
+
+    static int addBookToStorage(List<Storage> storages) {
+        OutPut.removeAddBook();
+        boolean success = false;
+        int retValue = 0;
+        while (!success) {
+            try {
+                //im not sure if its okay like this
+                Scanner scannerInt = new Scanner(System.in);
+                retValue = scannerInt.nextInt();
+                if (retValue > storages.size()) {
+                    success = false;
+                    throw new InputMismatchException();
+                } else {
+                    success = true;
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.println("Wrong input try again");
+            }
+        }
+        return retValue - 1;
+    }
+
+    static int chooseStorage(Home home) {
+        System.out.println("Enter the ID of the storage");
+        boolean success = false;
+        int retValue = 0;
+        while (!success) {
+            try {
+                //im not sure if its okay like this
+                Scanner scannerInt = new Scanner(System.in);
+                retValue = scannerInt.nextInt();
+                if (retValue > home.getStorage().size()) {
+                    success = false;
+                    throw new InputMismatchException();
+                } else {
+                    success = true;
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.println("Wrong input try again");
+            }
+        }
+        return retValue - 1;
+    }
+
+    static int chooseBookInTheStorage(List<Book> books) {
+        System.out.println("Enter the ID of the book");
+        boolean success = false;
+        int retValue = 0;
+        while (!success) {
+            try {
+                //im not sure if its okay like this
+                Scanner scannerInt = new Scanner(System.in);
+                retValue = scannerInt.nextInt();
+                if (retValue > books.size()) {
+                    success = false;
+                    throw new InputMismatchException();
+                } else {
+                    success = true;
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.println("Wrong input try again");
+            }
+        }
+        return retValue - 1;
+    }
 }
+
 
 
 
