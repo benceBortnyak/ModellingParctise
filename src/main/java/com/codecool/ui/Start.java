@@ -13,6 +13,7 @@ class Start {
         List<Book> books = new ArrayList<>();
         List<Storage> storages = new ArrayList<>();
         Home home = new Home(books, storages);
+
         OutPut.printWelcomeMessenge();
         while (true) {
             Thread.sleep(1000);
@@ -29,7 +30,7 @@ class Start {
             } else if (menu == 5) {
                 //move a book
             } else if (menu == 6) {
-                //display the storage
+                displayStorage(home);
             } else if (menu == 0) {
                 OutPut.printExitMenu();
                 int quit = Input.quitMenuInput();
@@ -148,16 +149,42 @@ class Start {
             home.setStorage(setList);
         }
     }
-    private void displayBooks(Home home){
+
+    private void displayBooks(Home home) {
         List<Book> books = home.getBooks();
-        for(Book book : books){
-            System.out.println(book);
+        for (int i = 0; i < books.size(); i++) {
+            System.out.println("ID " + (i + 1) + " | " + books.get(i));
         }
     }
-    private void displayStorage(Home home ){
+
+    private void displayStorage(Home home) {
         List<Storage> storage = home.getStorage();
-        for(Storage storage1 : storage){
-            System.out.println(storage1);
+        for (int i = 0; i <storage.size() ; i++) {
+            System.out.println("ID " +(i+1) +" | " + storage.get(i));
+        }
+    }
+
+    private void moveBook(Home home) {
+        while (true) {
+            OutPut.printRmSubMenu();
+            int input = Input.subMenuInput();
+            if(input == 1){
+                displayBooks(home);
+                List<Book> books = home.getBooks();
+                int rmIndex = Input.rmBookFromList(books);
+                Book book = books.get(rmIndex);
+                books.remove(rmIndex);
+                home.setBooks(books);
+
+
+            }
+            else if(input == 2){
+
+            }
+            else if(input ==3){
+                break;
+            }
+
         }
 
     }

@@ -1,6 +1,8 @@
 package com.codecool.ui;
 
 
+import com.codecool.brain.Book;
+
 import java.util.*;
 
 class Input {
@@ -88,7 +90,8 @@ class Input {
             "2.FAIRYTALE kind of book");
         return scanner.nextInt();
     }
-    static int storageTypeInput(){
+
+    static int storageTypeInput() {
         OutPut.printBookchoice();
         boolean success = false;
         int retValue = 0;
@@ -111,8 +114,9 @@ class Input {
         return retValue;
 
     }
-    static int storageCapacityInput(){
-    OutPut.printCapacity();
+
+    static int storageCapacityInput() {
+        OutPut.printCapacity();
         boolean success = false;
         int retValue = 0;
         while (!success) {
@@ -132,6 +136,51 @@ class Input {
             }
         }
         return retValue;
+
+    }
+
+    static int subMenuInput() {
+        boolean success = false;
+        int retValue = 0;
+        while (!success) {
+            try {
+                //im not sure if its okay like this
+                Scanner scannerInt = new Scanner(System.in);
+                retValue = scannerInt.nextInt();
+                if (retValue < 1 || retValue > 3) {
+                    success = false;
+                    throw new InputMismatchException();
+                } else {
+                    success = true;
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.println("Wrong input try again");
+            }
+        }
+        return retValue;
+    }
+    static int rmBookFromList(List<Book> books ){
+        OutPut.removeAddBook();
+        boolean success = false;
+        int retValue = 0;
+        while (!success) {
+            try {
+                //im not sure if its okay like this
+                Scanner scannerInt = new Scanner(System.in);
+                retValue = scannerInt.nextInt();
+                if (retValue > books.size()) {
+                    success = false;
+                    throw new InputMismatchException();
+                } else {
+                    success = true;
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.println("Wrong input try again");
+            }
+        }
+        return retValue - 1;
 
     }
 }

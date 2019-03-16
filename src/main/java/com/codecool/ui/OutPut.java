@@ -54,5 +54,16 @@ public class OutPut {
     static void printCapacity(){
         System.out.println("Enter the capacity of the storage ");
     }
+    static void printRmSubMenu(){
+        System.out.println("Press\n:" +
+            "-------------------------------\n"+
+            "1.to move a book to a storage\n"+
+            "2.remove a book from a storage\n"+
+            "3. to exit to the main menu"
+        );
+    }
 
+    public static void removeAddBook() {
+        System.out.println("Enter the id of a the book");
+    }
 }
