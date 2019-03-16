@@ -31,13 +31,28 @@ public class OutPut {
 
     }
     static void printNewBook(){
-        System.out.println("Choose wich kind of you wanna make;\n" +
+        System.out.println("Choose which kind of you wanna make;\n" +
             "\t 1.Cookbook"+
                 "\t 2.Pop up book"+
                 "\t 3.Fantasy book"
             );
     }
-
-
+    static void printBookMenu(){
+        System.out.println(
+            "The storage limited to the content of the book"+
+                "You have to choose the length of the storage"+
+                "and the type of the content"
+        );
+    }
+    static void printBookchoice(){
+        System.out.println("Press:\n" +
+            "1.to create a storage for children\n"+
+            "2.to create a storage for teenagers\n"+
+            "3.to create a storage for adults"
+        );
+    }
+    static void printCapacity(){
+        System.out.println("Enter the capacity of the storage ");
+    }
 
 }

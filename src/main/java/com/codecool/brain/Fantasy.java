@@ -13,12 +13,13 @@ public class Fantasy extends Book implements Serializable{
 
     @Override
     public String toString() {
-        return "Fantasy{" +
-            "type='" + type + '\'' +
-            ", author='" + author + '\'' +
-            ", title='" + title + '\'' +
-            ", numOfPages=" + numOfPages +
-            ", content=" + content +
-            '}';
+        List<String> cont = content;
+        String contStr = String.join("",cont);
+        return "Fantasy | " +
+            "SubGenre: " + type + " | " +
+            "Author: " + author + " | " +
+            "Title: " + title + " | " +
+            "Number of pages: " + numOfPages + " | " +
+            "\n\tContent:"+ contStr;
     }
 }

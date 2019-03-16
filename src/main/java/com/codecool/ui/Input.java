@@ -5,44 +5,63 @@ import java.util.*;
 
 class Input {
     private static Scanner scanner = new Scanner(System.in);
-    static int intInput(){
+
+    static int intInput() {
         return scanner.nextInt();
     }
-    static int quitMenuInput(){
+
+    static int quitMenuInput() {
         return scanner.nextInt();
     }
-    static String autorInPut(){
+
+    static String autorInPut() {
         System.out.println("Enter the autor : ");
-            return scanner.next();
+        return scanner.next();
     }
-    static String titleInPut(){
+
+    static String titleInPut() {
         System.out.println("Enter the title : ");
         return scanner.next();
     }
-    static int pageInput(){
-        int n;
+
+    static int pageInput() {
         System.out.println("Enter the number of pages : ");
-        try {
-            n = scanner.nextInt();
-        }catch (InputMismatchException e ){
-            System.out.println("Wrong input try again");
-            n = scanner.nextInt();
+        boolean success = false;
+        int retValue = 0;
+        while (!success) {
+            try {
+                //im not sure if its okay like this
+                Scanner scannerInt = new Scanner(System.in);
+                retValue = scannerInt.nextInt();
+                if (retValue <= 1) {
+                    success = false;
+                    throw new InputMismatchException();
+                } else {
+                    success = true;
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.println("Wrong input try again");
+            }
         }
-        return n;
+        return retValue;
     }
-    static String foodKindInPut(){
+
+    static String foodKindInPut() {
         System.out.println("Which kind of recipes are in the book? ");
         return scanner.next();
     }
-    static String typeInput(){
+
+    static String typeInput() {
         System.out.println("Enter the sub genre: ");
         return scanner.next();
     }
-    static List<String> content() throws InputMismatchException{
-        List<String> list = new ArrayList<>(Arrays.asList("teen","adult","child"));
+
+    static List<String> content() throws InputMismatchException {
+        List<String> list = new ArrayList<>(Arrays.asList("teen", "adult", "child"));
         List<String> retList = new ArrayList<>();
         System.out.println("For who is this book?\n");
-        while(list.size()>0) {
+        while (list.size() > 0) {
             System.out.println("If you added everything what you wanted press 0" +
                 "  Press:");
             for (int i = 0; i < list.size(); i++) {
@@ -55,19 +74,68 @@ class Input {
 
             } else if (in == 0) {
                 return retList;
-            }
-            else if(in<3 && in>0) {
-                String string = list.remove(in-1);
+            } else if (in < 3 && in > 0) {
+                String string = list.remove(in - 1);
                 retList.add(string);
             }
         }
         return retList;
     }
-    static int kindInput() throws InputMismatchException{
+
+    static int kindInput() throws InputMismatchException {
         System.out.println("Press:" +
-            "1.CITY kind of book"+
+            "1.CITY kind of book" +
             "2.FAIRYTALE kind of book");
         return scanner.nextInt();
     }
+    static int storageTypeInput(){
+        OutPut.printBookchoice();
+        boolean success = false;
+        int retValue = 0;
+        while (!success) {
+            try {
+                //im not sure if its okay like this
+                Scanner scannerInt = new Scanner(System.in);
+                retValue = scannerInt.nextInt();
+                if (retValue < 1 || retValue > 3) {
+                    success = false;
+                    throw new InputMismatchException();
+                } else {
+                    success = true;
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.println("Wrong input try again");
+            }
+        }
+        return retValue;
+
+    }
+    static int storageCapacityInput(){
+    OutPut.printCapacity();
+        boolean success = false;
+        int retValue = 0;
+        while (!success) {
+            try {
+                //im not sure if its okay like this
+                Scanner scannerInt = new Scanner(System.in);
+                retValue = scannerInt.nextInt();
+                if (retValue < 0) {
+                    success = false;
+                    throw new InputMismatchException();
+                } else {
+                    success = true;
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.println("Wrong input try again");
+            }
+        }
+        return retValue;
+
+    }
 }
+
+
+
 

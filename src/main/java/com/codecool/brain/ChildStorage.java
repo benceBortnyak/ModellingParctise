@@ -7,7 +7,6 @@ public class ChildStorage extends Storage implements Serializable {
 
     private List<Book> storage;
     private int capacity;
-    private String type;
 
     public ChildStorage(List<Book> storage, int capacity) {
         super("child");

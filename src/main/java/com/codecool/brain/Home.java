@@ -10,9 +10,9 @@ public class Home{
     private List<Book> books;
     private List<Storage> storage;
 
-    public Home() {
-        this.books = null;
-        this.storage = null;
+    public Home(List<Book> books,List<Storage> storage) {
+        this.books = books;
+        this.storage = storage;
     }
 
 

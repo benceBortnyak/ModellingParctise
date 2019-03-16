@@ -15,13 +15,14 @@ public class PopUpBook extends Book implements Serializable{
 
     @Override
     public String toString() {
-        return "PopUpBook{" +
-            "kind=" + kind +
-            ", author='" + author + '\'' +
-            ", title='" + title + '\'' +
-            ", numOfPages=" + numOfPages +
-            ", content=" + content +
-            '}';
+        List<String> cont = content;
+        String contStr = String.join("",cont);
+        return "PopUpBook | " +
+            "Type: " + kind +" | " +
+            "Author: " + author +" | " +
+            "Title: " + title + " | " +
+            "Number of pages: " + numOfPages + " | " +
+            "\n\tContent:"+ contStr;
     }
 }
 

@@ -24,4 +24,11 @@ public class TeenStorage extends Storage implements Serializable {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        return "TeenStorage | " +
+            "Capacity: " + capacity +
+            "Storage: " + storage;
+    }
 }
